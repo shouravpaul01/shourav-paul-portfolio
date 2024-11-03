@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { IconSvgProps } from "@/types";
+import { IconSvgProps } from "@/src/types";
 
 export const Logo: React.FC<IconSvgProps> = ({
   size = 36,
@@ -212,4 +212,66 @@ export const NextUILogo: React.FC<IconSvgProps> = (props) => {
       />
     </svg>
   );
+};
+export const HomeIcon: React.FC<IconSvgProps> = (props) => {
+  const { width=26, height = 26, fill="#666666"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960"  ><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+  );
+};
+export const AboutIcon: React.FC<IconSvgProps> = (props) => {
+    const { width=26, height = 26, fill="#666666"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960" ><path d="M200-40q-17 0-28.5-11.5T160-80q0-17 11.5-28.5T200-120h560q17 0 28.5 11.5T800-80q0 17-11.5 28.5T760-40H200Zm0-800q-17 0-28.5-11.5T160-880q0-17 11.5-28.5T200-920h560q17 0 28.5 11.5T800-880q0 17-11.5 28.5T760-840H200Zm280 400q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm70-80q45-56 109-88t141-32q77 0 141 32t109 88h70v-480H160v480h70Zm118 0h264q-29-20-62.5-30T480-280q-36 0-69.5 10T348-240Zm132-280q-17 0-28.5-11.5T440-560q0-17 11.5-28.5T480-600q17 0 28.5 11.5T520-560q0 17-11.5 28.5T480-520Zm0 40Z"/></svg>
+  );
+};
+
+export const ServiceIcon: React.FC<IconSvgProps> = (props) => {
+    const { width=26, height = 26, fill="#666666"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960" ><path d="M480-411q-10 0-19.5-2.5T442-421L104-605q-11-6-15.5-15T84-640q0-11 4.5-20t15.5-15l338-184q9-5 18.5-7.5T480-869q10 0 19.5 2.5T518-859l338 184q11 6 15.5 15t4.5 20q0 11-4.5 20T856-605L518-421q-9 5-18.5 7.5T480-411Zm0-80 273-149-273-149-273 149 273 149Zm0-149Zm0 309 314-171q2-1 19-5 17 0 28.5 11.5T853-467q0 11-5 20t-16 15L518-261q-9 5-18.5 7.5T480-251q-10 0-19.5-2.5T442-261L128-432q-11-6-16-15t-5-20q0-17 11.5-28.5T147-507q5 0 9.5 1.5t9.5 3.5l314 171Zm0 160 314-171q2-1 19-5 17 0 28.5 11.5T853-307q0 11-5 20t-16 15L518-101q-9 5-18.5 7.5T480-91q-10 0-19.5-2.5T442-101L128-272q-11-6-16-15t-5-20q0-17 11.5-28.5T147-347q5 0 9.5 1.5t9.5 3.5l314 171Z"/></svg>
+  );
+};
+
+export const PortfolioIcon: React.FC<IconSvgProps> = (props) => {
+    const { width=26, height = 26, fill="#666666"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960" ><path d="M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
+  );
+};
+export const BlogIcon: React.FC<IconSvgProps> = (props) => {
+    const { width=26, height = 26, fill="#666666"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960" ><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm80-80h400v-80H280v80Zm0-320h200v-80H280v80Zm0 160h400v-80H280v80Zm-80-320v160-160 560-560Z"/></svg>
+  );
+};
+
+export const ContactIcon: React.FC<IconSvgProps> = (props) => {
+    const { width=26, height = 26, fill="#666666"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960" ><path d="M880-80 720-240H320q-33 0-56.5-23.5T240-320v-40h440q33 0 56.5-23.5T760-440v-280h40q33 0 56.5 23.5T880-640v560ZM160-473l47-47h393v-280H160v327ZM80-280v-520q0-33 23.5-56.5T160-880h440q33 0 56.5 23.5T680-800v280q0 33-23.5 56.5T600-440H240L80-280Zm80-240v-280 280Z"/></svg>
+  );
+};
+export const HandShakeIcon: React.FC<IconSvgProps> = (props) => {
+  const { width=26, height = 26, fill="#666666"} = props;
+
+return (
+  <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill} viewBox="0 -960 960 960" ><path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/></svg>
+);
+};
+
+export const LinkedinIcon: React.FC<IconSvgProps> = (props) => {
+  const { width=26, height = 26, fill="#666666"} = props;
+
+return (
+  <svg xmlns="http://www.w3.org/2000/svg" height={height} width={width} fill={fill}  className="bi bi-linkedin" viewBox="0 0 16 16">
+<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>
+);
 };
