@@ -61,7 +61,7 @@ export const Navbar = () => {
  
   return (
 
-  <NextUINavbar maxWidth="xl" position="sticky" classNames={{ base:`bg-transparent `, wrapper:`bg-background rounded-md mt-3` }}>
+  <NextUINavbar maxWidth="xl" position="sticky" classNames={{ base:`bg-transparent  pt-3`, wrapper:`bg-background rounded-md` }}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center  gap-1" href="/">
@@ -75,6 +75,8 @@ export const Navbar = () => {
           <Tabs aria-label="Options" variant="light">
             <Tab
               key="home"
+              href="/"
+              as={Link}
               title={
                 <div className="flex items-center space-x-2">
                   <HomeIcon />
@@ -83,7 +85,7 @@ export const Navbar = () => {
               }
             />
 
-            <Tab key="about" title={
+            <Tab key="about" href="/about" as={Link} title={
                 <div className="flex items-center space-x-2">
                   <AboutIcon />
                   <span>About</span>

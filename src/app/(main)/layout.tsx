@@ -2,18 +2,18 @@
 
 import { Navbar } from "@/src/components/navbar";
 import LeftSideContent from "@/src/components/ui/LeftSideContent";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   
 
   return (
-    <div className="h-screen relative overflow-y-scroll">
+    <div className="h-screen relative ">
       <Navbar />
 
-      <main className="container mx-auto max-w-7xl relative flex">
+      <main className="container mx-auto max-w-7xl relative flex gap-5 mt-5">
         {/* Left Sidebar */}
-        <div className="w-[30%] h-screen sticky top-[76px]">
+        <div className="w-[30%] h-screen sticky top-[90px]">
           <LeftSideContent />
         </div>
 
