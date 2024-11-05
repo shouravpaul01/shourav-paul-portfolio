@@ -49,3 +49,16 @@ export const backendSkills=[
     
     
 ]
+export const softSkills: string[] = [
+    "Problem Solving",
+    "Time Management",
+    "Collaboration",
+    "Critical Thinking",
+    "Attention to Detail",
+    "Creativity",
+    "Negotiation Skills",
+    "Leadership",
+    "Networking",
+    "Cultural Awareness",
+    "Work Ethic"
+];
