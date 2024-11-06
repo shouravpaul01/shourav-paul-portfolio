@@ -46,11 +46,11 @@ export default function LeftSideContent() {
       </div>
       <div className="flex flex-col gap-4 my-4">
         <div className="flex gap-3">
-          <div className="w-12 h-12 flex items-center justify-center rounded-md shadow-slate-400 dark:shadow-secondary shadow-md">
+          <div className="w-12 h-12 bg-gradient-to-t from-secondary-100 to-background flex items-center justify-center rounded-md shadow-slate-400 dark:shadow-secondary shadow-md border dark:border-secondary">
             <CallIcon fill="#2854C5" />
           </div>
           <div className="font-chakra">
-            <p className="text-slate-500">Call</p>
+            <p className="text-slate-500 font-semibold">Call</p>
             <Snippet
               hideSymbol
               classNames={{
@@ -63,11 +63,11 @@ export default function LeftSideContent() {
           </div>
         </div>
         <div className="flex gap-3">
-          <div className="w-12 h-12 flex items-center justify-center rounded-md shadow-slate-400 dark:shadow-secondary shadow-md ">
+        <div className="w-12 h-12 bg-gradient-to-t from-secondary-100 to-background flex items-center justify-center rounded-md shadow-slate-400 dark:shadow-secondary shadow-md border dark:border-secondary">
             <MessageIcon fill="#F19E39" />
           </div>
           <div className="font-chakra">
-            <p className="text-slate-500">Email</p>
+            <p className="text-slate-500 font-semibold">Email</p>
             <Snippet
               hideSymbol
               classNames={{
@@ -80,20 +80,22 @@ export default function LeftSideContent() {
           </div>
         </div>
         <div className="flex gap-3">
-          <div className="w-12 h-12 flex items-center justify-center rounded-md shadow-slate-400 dark:shadow-secondary shadow-md">
+        <div className="w-12 h-12 bg-gradient-to-t from-secondary-100 to-background flex items-center justify-center rounded-md shadow-slate-400 dark:shadow-secondary shadow-md border dark:border-secondary">
             <LocationIcon fill="#EA3323" />
           </div>
           <div className="font-chakra">
-            <p className="text-slate-500">Location</p>
+            <p className="text-slate-500 font-semibold">Location</p>
             <p className="font-bold">Kalabagan ,Dhanmondi</p>
           </div>
         </div>
       </div>
       <div className="flex justify-center">
+        
         <Button
           color="secondary"
-         className="overflow-visible rounded-s-full pe-12"
-          endContent={<div className="w-14 h-14 flex justify-center items-center bg-white border border-secondary shadow-inner shadow-secondary rounded-full absolute -right-8 "><span className="animate-bounce"><DownloadIcon fill="#7828c8" /></span></div>}
+         radius="full"
+         className="w-44 shadow-md shadow-gray-300 "
+          endContent={<span className="animate-bounce"><DownloadIcon fill="#FFFFFF" /></span>}
         >
           Dowload CV
         </Button>

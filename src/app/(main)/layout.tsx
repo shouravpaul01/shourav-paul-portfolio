@@ -11,7 +11,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     <div className="h-screen relative ">
       <Navbar />
 
-      <main className="container mx-auto max-w-7xl relative flex gap-5 mt-5">
+      <main className="container mx-auto max-w-7xl relative flex gap-6 mt-6">
         {/* Left Sidebar */}
         <div className="w-[30%] h-screen sticky top-[90px]">
           <LeftSideContent />

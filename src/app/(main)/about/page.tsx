@@ -26,7 +26,7 @@ export default function AboutPage() {
           </Chip>
         </h1>
         <div className="text-md text-slate-500 text-justify mt-5 mb-8">
-          I am a dedicated MERN stack developer with a flair for creating
+          I am a dedicated <span className="font-bold">MERN stack developer</span> with a flair for creating
           dynamic,creative and user friendly web applications. Now I’m currently
           pursuing my MSc. at Jahangirnagar University, and I hold a Bachelor’s
           degree in Computer Science Engineering from the University of Science
@@ -35,8 +35,8 @@ export default function AboutPage() {
           <p className="mt-2" />
           With over 2 years of hands-on experience, I have gained skills and
           developed expertise using various tools and technologies, such as
-          Tailwind CSS, Firebase, Javascript, Typescript, React, MongoDB,
-          Mongoose, and Express. js. I love solving difficult challenges and
+          <span className="font-bold"> Tailwind CSS, Firebase, Javascript, Typescript, React,Redux,Next JS, MongoDB,
+          Mongoose, and Express JS.</span> I love solving difficult challenges and
           bringing ideas to life in impactful ways.
           <p className="mt-2" />
           I’m a firm believer in lifelong learning. Whether through
@@ -129,7 +129,7 @@ export default function AboutPage() {
               2023 - Present
             </Chip>
             <p className="font-chakra font-bold text-xl mt-6">
-              jahangirnagar University
+              Jahangirnagar University
             </p>
             <p className="font-chakra  text-xl text-slate-500">
               MSc in <span>Computer Science.</span>

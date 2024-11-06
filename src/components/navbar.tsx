@@ -34,10 +34,11 @@ import {
 } from "@/src/components/icons";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 
 export const Navbar = () => {
-
+const pathname=usePathname()
   const searchInput = (
     <Input
       aria-label="Search"
@@ -72,9 +73,9 @@ export const Navbar = () => {
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Tabs aria-label="Options" variant="light">
+          <Tabs selectedKey={pathname} onSelectionChange={(key)=>key} aria-label="Options" variant="light">
             <Tab
-              key="home"
+              key="/"
               href="/"
               as={Link}
               title={
@@ -85,32 +86,32 @@ export const Navbar = () => {
               }
             />
 
-            <Tab key="about" href="/about" as={Link} title={
+            <Tab key="/about" href="/about" as={Link} title={
                 <div className="flex items-center space-x-2">
                   <AboutIcon />
                   <span>About</span>
                 </div>
               } />
 
-            <Tab key="services" title={
+            <Tab key="/services" title={
                 <div className="flex items-center space-x-2">
                   <ServiceIcon />
                   <span>Services</span>
                 </div>
               } />
-              <Tab key="portfolio" title={
+              <Tab key="/portfolio" title={
                 <div className="flex items-center space-x-2">
                   <PortfolioIcon />
                   <span>Portfolio</span>
                 </div>
               } />
-              <Tab key="blog" title={
+              <Tab key="/blog" title={
                 <div className="flex items-center space-x-2">
                   <BlogIcon />
                   <span>Blog</span>
                 </div>
               } />
-              <Tab key="contact" title={
+              <Tab key="/contact" href="/contact" as={Link} title={
                 <div className="flex items-center space-x-2">
                   <ContactIcon />
                   <span>Contact</span>
