@@ -118,6 +118,8 @@ export const Navbar = () => {
             />
             <Tab
               key="/portfolio"
+              href="/portfolio"
+              as={Link}
               title={
                 <div className="flex items-center space-x-2">
                   <PortfolioIcon />

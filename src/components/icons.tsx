@@ -541,3 +541,10 @@ export const WhatsUpIcon: React.FC<IconSvgProps> = (props) => {
     </svg>
   );
 };
+export const AddIcon: React.FC<IconSvgProps> = (props) => {
+  const { className = "h-5 w-5 text-current" } = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 -960 960 960"  fill="none"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+  );
+};
