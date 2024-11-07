@@ -1,23 +1,26 @@
 "use client";
-import { ContactIcon } from "@/src/components/icons";
+import { CircleIcon, ContactIcon } from "@/src/components/icons";
 import HeadingLine from "@/src/components/ui/HeadingLine";
 import { Button } from "@nextui-org/button";
 import { Input, Textarea } from "@nextui-org/input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactValidation } from "@/src/validation/contact.validation";
+import { toast } from "sonner";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [isSuccess, setIsSuccess] = useState(false);
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(contactValidation),
   });
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    console.log(data);
+    setIsSuccess(true);
     const response = await fetch("/api/send-mail", {
       method: "POST",
       headers: {
@@ -25,13 +28,18 @@ export default function ContactPage() {
       },
       body: JSON.stringify(data),
     });
-    console.log(response, "dddd");
-    //   if (response.ok) {
-    //     setStatus('Email sent successfully');
-    //   } else {
-    //     setStatus('Failed to send email');
-    //   }
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+      reset();
+      toast.success(responseData?.message);
+    } else {
+      toast.error(responseData?.message);
+    }
+    setIsSuccess(false);
   };
+  console.log(isSuccess);
   return (
     <div className="bg-background p-10 rounded-md">
       <section>
@@ -105,7 +113,11 @@ export default function ContactPage() {
               type="submit"
               color="secondary"
               className="w-full md:w-44"
-              startContent={<ContactIcon fill="#FFFFFF" />}
+              isLoading={isSuccess}
+              spinner={
+                <CircleIcon className="size-6 text-current animate-spin" />
+              }
+              startContent={!isSuccess && <ContactIcon fill="#FFFFFF" />}
             >
               Submit
             </Button>

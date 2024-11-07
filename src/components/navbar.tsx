@@ -14,7 +14,6 @@ import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
 import NextLink from "next/link";
 
-
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/theme-switch";
 import {
@@ -36,9 +35,8 @@ import { Tab, Tabs } from "@nextui-org/tabs";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
-
 export const Navbar = () => {
-const pathname=usePathname()
+  const pathname = usePathname();
   const searchInput = (
     <Input
       aria-label="Search"
@@ -54,15 +52,21 @@ const pathname=usePathname()
       labelPlacement="outside"
       placeholder="Search..."
       startContent={
-        <SearchIcon className="text-base text-default-400  pointer-events-none flex-shrink-0 "  />
+        <SearchIcon className="text-base text-default-400  pointer-events-none flex-shrink-0 " />
       }
       type="search"
     />
   );
- 
-  return (
 
-  <NextUINavbar maxWidth="xl" position="sticky" classNames={{ base:`bg-transparent  pt-3`, wrapper:`bg-background rounded-md` }}>
+  return (
+    <NextUINavbar
+      maxWidth="xl"
+      position="sticky"
+      classNames={{
+        base: `bg-transparent  pt-3`,
+        wrapper: `bg-background rounded-md`,
+      }}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center  gap-1" href="/">
@@ -73,7 +77,12 @@ const pathname=usePathname()
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Tabs selectedKey={pathname} onSelectionChange={(key)=>key} aria-label="Options" variant="light">
+          <Tabs
+            selectedKey={pathname}
+            onSelectionChange={(key) => key}
+            aria-label="Options"
+            variant="light"
+          >
             <Tab
               key="/"
               href="/"
@@ -86,37 +95,56 @@ const pathname=usePathname()
               }
             />
 
-            <Tab key="/about" href="/about" as={Link} title={
+            <Tab
+              key="/about"
+              href="/about"
+              as={Link}
+              title={
                 <div className="flex items-center space-x-2">
                   <AboutIcon />
                   <span>About</span>
                 </div>
-              } />
+              }
+            />
 
-            <Tab key="/services" title={
+            <Tab
+              key="/services"
+              title={
                 <div className="flex items-center space-x-2">
                   <ServiceIcon />
                   <span>Services</span>
                 </div>
-              } />
-              <Tab key="/portfolio" title={
+              }
+            />
+            <Tab
+              key="/portfolio"
+              title={
                 <div className="flex items-center space-x-2">
                   <PortfolioIcon />
                   <span>Portfolio</span>
                 </div>
-              } />
-              <Tab key="/blog" title={
+              }
+            />
+            <Tab
+              key="/blog"
+              title={
                 <div className="flex items-center space-x-2">
                   <BlogIcon />
                   <span>Blog</span>
                 </div>
-              } />
-              <Tab key="/contact" href="/contact" as={Link} title={
+              }
+            />
+            <Tab
+              key="/contact"
+              href="/contact"
+              as={Link}
+              title={
                 <div className="flex items-center space-x-2">
                   <ContactIcon />
                   <span>Contact</span>
                 </div>
-              } />
+              }
+            />
           </Tabs>
         </NavbarItem>
       </NavbarContent>
@@ -130,11 +158,10 @@ const pathname=usePathname()
 
         <NavbarItem className="hidden md:flex">
           <Button
-            isExternal
+            href="/contact"
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            endContent={<HandShakeIcon  />}
+            endContent={<HandShakeIcon />}
             variant="flat"
           >
             Let's Talk
@@ -173,8 +200,5 @@ const pathname=usePathname()
         </div>
       </NavbarMenu>
     </NextUINavbar>
-
-     
- 
   );
 };

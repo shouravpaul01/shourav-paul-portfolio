@@ -17,7 +17,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
   return (
     <NextUIProvider navigate={router.push}>
-       <Toaster />
+       <Toaster position="top-center"/>
       <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
     </NextUIProvider>
   );
