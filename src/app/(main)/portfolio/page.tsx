@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Portfoliopage() {
   return (
-    <div className="bg-background p-5 rounded-md">
+    <div className="bg-background p-5 md:p-10 rounded-md">
       <div className="flex items-center gap-3 mb-3">
         <h3 className="text-2xl font-bold font-chakra">
           Explore My Recent Projects

@@ -34,6 +34,7 @@ import {
 import { Tab, Tabs } from "@nextui-org/tabs";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -63,15 +64,15 @@ export const Navbar = () => {
       maxWidth="xl"
       position="sticky"
       classNames={{
-        base: `bg-transparent  pt-3`,
-        wrapper: `bg-background rounded-md`,
+        base: ` !backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none md:pt-3`,
+        wrapper: ` bg-background rounded-md `,
+        menu: "!backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none px-3",
       }}
     >
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+      <NavbarContent className="basis-1/5 sm:basis-full  " justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center  gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <img src="/SP-logo.png" alt="logo" width={200} height={70} />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -96,19 +97,9 @@ export const Navbar = () => {
             />
 
             <Tab
-              key="/about"
-              href="/about"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <AboutIcon />
-                  <span>About</span>
-                </div>
-              }
-            />
-
-            <Tab
               key="/services"
+              href="/services"
+              as={Link}
               title={
                 <div className="flex items-center space-x-2">
                   <ServiceIcon />
@@ -127,15 +118,7 @@ export const Navbar = () => {
                 </div>
               }
             />
-            <Tab
-              key="/blog"
-              title={
-                <div className="flex items-center space-x-2">
-                  <BlogIcon />
-                  <span>Blog</span>
-                </div>
-              }
-            />
+
             <Tab
               key="/contact"
               href="/contact"
@@ -144,6 +127,15 @@ export const Navbar = () => {
                 <div className="flex items-center space-x-2">
                   <ContactIcon />
                   <span>Contact</span>
+                </div>
+              }
+            />
+            <Tab
+              key="/blog"
+              title={
+                <div className="flex items-center space-x-2">
+                  <BlogIcon />
+                  <span>Blog</span>
                 </div>
               }
             />
@@ -172,34 +164,75 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarMenu>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </div>
+      <NavbarMenu >
+        <div className="bg-background h-screen p-3 rounded-md"><Tabs
+        isVertical
+            selectedKey={pathname}
+            onSelectionChange={(key) => key}
+            aria-label="Options"
+            variant="light"
+            classNames={{base:"flex-1 flex-col",tab:"justify-start"}}
+          >
+            <Tab
+              key="/"
+              href="/"
+              as={Link}
+              title={
+                <div className="flex items-center space-x-2">
+                  <HomeIcon />
+                  <span>Home</span>
+                </div>
+              }
+            />
+
+            <Tab
+              key="/services"
+              href="/services"
+              as={Link}
+              title={
+                <div className="flex items-center space-x-2">
+                  <ServiceIcon />
+                  <span>Services</span>
+                </div>
+              }
+            />
+            <Tab
+              key="/portfolio"
+              href="/portfolio"
+              as={Link}
+              title={
+                <div className="flex items-center space-x-2">
+                  <PortfolioIcon />
+                  <span>Portfolio</span>
+                </div>
+              }
+            />
+
+            <Tab
+              key="/contact"
+              href="/contact"
+              as={Link}
+              title={
+                <div className="flex items-center space-x-2">
+                  <ContactIcon />
+                  <span>Contact</span>
+                </div>
+              }
+            />
+            <Tab
+              key="/blog"
+              title={
+                <div className="flex items-center space-x-2">
+                  <BlogIcon />
+                  <span>Blog</span>
+                </div>
+              }
+            />
+          </Tabs></div>
       </NavbarMenu>
     </NextUINavbar>
   );

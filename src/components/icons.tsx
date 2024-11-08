@@ -520,7 +520,7 @@ export const WhatsUpIcon: React.FC<IconSvgProps> = (props) => {
     >
       <g
         fill="#25d366"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         stroke="none"
         strokeWidth="1"
         strokeLinecap="butt"
@@ -546,5 +546,13 @@ export const AddIcon: React.FC<IconSvgProps> = (props) => {
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 -960 960 960"  fill="none"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+  );
+};
+
+export const CodeIcon: React.FC<IconSvgProps> = (props) => {
+  const { className = "h-5 w-5 fill-white" } = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className={className} fill="none"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
   );
 };

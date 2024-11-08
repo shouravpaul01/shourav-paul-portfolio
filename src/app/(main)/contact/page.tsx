@@ -41,7 +41,7 @@ export default function ContactPage() {
   };
   console.log(isSuccess);
   return (
-    <div className="bg-background p-10 rounded-md">
+    <div className="bg-background p-5 md:p-10 rounded-md">
       <section>
         <div className="flex items-center gap-3 mb-3">
           <p className="font-chakra font-bold text-2xl">Get in Touch</p>
@@ -51,9 +51,9 @@ export default function ContactPage() {
           Feel free to get in touch with me. I am always open to discussing new
           projects, creative ideas or opportunities to be part of your visions.
         </p>
-        <div className="bg-gray-50 dark:bg-opacity-10 dark:shadow-inner dark:shadow-secondary  md:p-20 rounded-md ">
+        <div className="bg-gray-50 dark:bg-opacity-10 dark:shadow-inner dark:shadow-secondary p-5 md:p-20 rounded-md ">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 ">
-            <div className="flex gap-5">
+            <div className="flex flex-col md:flex-row gap-5">
               <Input
                 type="text"
                 {...register("name")}
