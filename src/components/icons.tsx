@@ -556,3 +556,26 @@ export const CodeIcon: React.FC<IconSvgProps> = (props) => {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className={className} fill="none"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
   );
 };
+export const ErrorIcon: React.FC<IconSvgProps> = (props) => {
+  const { width = 24, height = 24 , fill="#7828c8"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height}
+    width={width} fill={fill} viewBox="0 -960 960 960"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+  );
+};
+export const ArrowForwardIcon: React.FC<IconSvgProps> = (props) => {
+  const { width = 24, height = 24 ,fill="#FFFFFF"} = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height={height}
+    width={width} viewBox="0 -960 960 960"  fill={fill}><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+  );
+};
+export const GridViewIcon: React.FC<IconSvgProps> = (props) => {
+  const { className = "h-5 w-5 fill-white" } = props;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className={className} fill="none"><path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520ZM200-600h160v-160H200v160Zm400 0h160v-160H600v160Zm0 400h160v-160H600v160Zm-400 0h160v-160H200v160Zm400-400Zm0 240Zm-240 0Zm0-240Z"/></svg>
+  );
+};

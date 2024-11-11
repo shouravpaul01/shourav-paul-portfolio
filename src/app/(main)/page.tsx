@@ -8,11 +8,11 @@ import { it } from "node:test";
 
 export default function HomePage() {
   return (
-    <div className="bg-background p-5 md:p-10 rounded-md">
+    <div className="bg-background p-5 md:p-10 rounded-md  ">
       <section>
         <h1 className="text-3xl font-extrabold font-chakra ">
-          Hello ✋, I am <span className="text-secondary ">Shourav Paul</span>{" "}
-          <Chip
+          Hello ✋, This is <span className="text-secondary ">Shourav Paul</span>{" "}
+          {/* <Chip
             color="success"
             size="lg"
             startContent={
@@ -23,12 +23,12 @@ export default function HomePage() {
             className="font-bold"
           >
             Available for Hire.
-          </Chip>
+          </Chip> */}
         </h1>
         <div className="text-md text-slate-500 text-justify mt-5 mb-8">
-          I am a dedicated <span className="font-bold">MERN stack developer</span> with a flair for creating
+          I am a skilled <span className="font-bold">MERN stack developer</span> with a flair for creating
           dynamic,creative and user friendly web applications. Now I’m currently
-          pursuing my MSc. at Jahangirnagar University, and I hold a Bachelor’s
+          pursuing my MSc in Computer Science at Jahangirnagar University, and I hold a Bachelor’s
           degree in Computer Science Engineering from the University of Science
           and Technology Chittagong. This background has given me a strong
           foundation in about world of technology .
@@ -39,10 +39,7 @@ export default function HomePage() {
           Mongoose, and Express JS.</span> I love solving difficult challenges and
           bringing ideas to life in impactful ways.
           <p className="mt-2" />
-          I’m a firm believer in lifelong learning. Whether through
-          workshops,online source, online courses, or industry conferences, I am
-          constantly seeking opportunities to deepen my expertise and stay ahead
-          in the ever-evolving MERN stack ecosystem.
+          I’m a firm believer in lifelong learning. Whether through workshops, online resources, online courses, or industry conferences, I am constantly seeking opportunities to deepen my expertise and stay ahead in the ever-evolving world of new technology.
         </div>
         <div className="flex gap-10 ">
           <div>

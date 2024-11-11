@@ -51,7 +51,7 @@ export default function ContactPage() {
           Feel free to get in touch with me. I am always open to discussing new
           projects, creative ideas or opportunities to be part of your visions.
         </p>
-        <div className="bg-gray-50 dark:bg-opacity-10 dark:shadow-inner dark:shadow-secondary p-5 md:p-20 rounded-md ">
+        <div className="bg-gray-50 border dark:border-secondary dark:bg-opacity-10  dark:shadow-inner dark:shadow-secondary p-5 md:p-20 rounded-md ">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 ">
             <div className="flex flex-col md:flex-row gap-5">
               <Input

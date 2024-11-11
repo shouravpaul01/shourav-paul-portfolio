@@ -6,68 +6,35 @@ import {
   NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
-  NavbarMenuItem,
+ 
 } from "@nextui-org/navbar";
 import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
 import NextLink from "next/link";
-
-import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/theme-switch";
 import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-  Logo,
-  HomeIcon,
-  AboutIcon,
-  ServiceIcon,
-  PortfolioIcon,
-  BlogIcon,
-  ContactIcon,
   HandShakeIcon,
 } from "@/src/components/icons";
-import { Tab, Tabs } from "@nextui-org/tabs";
-import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
+import {  useState } from "react";
+import MenuTab from "./MenuTab";
 
 export const Navbar = () => {
-  const pathname = usePathname();
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: "bg-default-100",
-        input: "text-sm",
-      }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
-        <SearchIcon className="text-base text-default-400  pointer-events-none flex-shrink-0 " />
-      }
-      type="search"
-    />
-  );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 
   return (
     <NextUINavbar
       maxWidth="xl"
       position="sticky"
+      isBlurred
       classNames={{
         base: ` !backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none md:pt-3`,
-        wrapper: ` bg-background rounded-md `,
-        menu: "!backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none px-3",
+        wrapper: ` bg-background rounded-md shadow-small dark:border border-slate-700`,
+        menu: "!backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none px-3",
+      
       }}
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="basis-1/5 sm:basis-full  " justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
@@ -78,68 +45,7 @@ export const Navbar = () => {
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Tabs
-            selectedKey={pathname}
-            onSelectionChange={(key) => key}
-            aria-label="Options"
-            variant="light"
-          >
-            <Tab
-              key="/"
-              href="/"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <HomeIcon />
-                  <span>Home</span>
-                </div>
-              }
-            />
-
-            <Tab
-              key="/services"
-              href="/services"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <ServiceIcon />
-                  <span>Services</span>
-                </div>
-              }
-            />
-            <Tab
-              key="/portfolio"
-              href="/portfolio"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <PortfolioIcon />
-                  <span>Portfolio</span>
-                </div>
-              }
-            />
-
-            <Tab
-              key="/contact"
-              href="/contact"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <ContactIcon />
-                  <span>Contact</span>
-                </div>
-              }
-            />
-            <Tab
-              key="/blog"
-              title={
-                <div className="flex items-center space-x-2">
-                  <BlogIcon />
-                  <span>Blog</span>
-                </div>
-              }
-            />
-          </Tabs>
+          <MenuTab />
         </NavbarItem>
       </NavbarContent>
       <NavbarContent
@@ -154,9 +60,10 @@ export const Navbar = () => {
           <Button
             href="/contact"
             as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
+            color="secondary"
             endContent={<HandShakeIcon />}
             variant="flat"
+            className="font-semibold"
           >
             Let's Talk
           </Button>
@@ -169,70 +76,9 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu >
-        <div className="bg-background h-screen p-3 rounded-md"><Tabs
-        isVertical
-            selectedKey={pathname}
-            onSelectionChange={(key) => key}
-            aria-label="Options"
-            variant="light"
-            classNames={{base:"flex-1 flex-col",tab:"justify-start"}}
-          >
-            <Tab
-              key="/"
-              href="/"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <HomeIcon />
-                  <span>Home</span>
-                </div>
-              }
-            />
-
-            <Tab
-              key="/services"
-              href="/services"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <ServiceIcon />
-                  <span>Services</span>
-                </div>
-              }
-            />
-            <Tab
-              key="/portfolio"
-              href="/portfolio"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <PortfolioIcon />
-                  <span>Portfolio</span>
-                </div>
-              }
-            />
-
-            <Tab
-              key="/contact"
-              href="/contact"
-              as={Link}
-              title={
-                <div className="flex items-center space-x-2">
-                  <ContactIcon />
-                  <span>Contact</span>
-                </div>
-              }
-            />
-            <Tab
-              key="/blog"
-              title={
-                <div className="flex items-center space-x-2">
-                  <BlogIcon />
-                  <span>Blog</span>
-                </div>
-              }
-            />
-          </Tabs></div>
+        <div className="bg-background shadow-small dark:border border-slate-700 h-screen p-3 rounded-md">
+          <MenuTab tabsProps={{isVertical:true, classNames:{base:"flex-1 flex-col",tab:"justify-start"}}} setIsMenuOpen={setIsMenuOpen}/>
+          </div>
       </NavbarMenu>
     </NextUINavbar>
   );

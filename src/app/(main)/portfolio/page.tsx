@@ -15,6 +15,9 @@ export default function Portfoliopage() {
         </h3>
         <HeadingLine classNames={{ line: "w-32" }} />
       </div>
+      <p className=" text-slate-500 text-justify mb-5">
+      Browse through my latest work to explore a diverse range of designs and developments, meticulously crafted with precision and creativity.
+        </p>
       <div className="space-y-7">
       {
         projectData.map((item,index)=> <ProjectCard key={index} project={item} />)

@@ -1,9 +1,11 @@
-import { title } from "@/components/primitives";
+
 
 export default function BlogPage() {
   return (
-    <div>
-      <h1 className={title()}>Blog</h1>
+    <div className="h-screen flex items-center justify-center">
+      <p className="text-xl text-slate-500 font-chakra font-bold">
+        Comming soon
+      </p>
     </div>
   );
 }

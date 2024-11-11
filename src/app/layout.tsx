@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/src/config/site";
 import { fontSans } from "@/src/config/fonts";
 
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -36,13 +37,14 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-green-200 font-sans antialiased ",
+          "min-h-screen  w-full font-sans antialiased ",
           fontSans.variable,
         )}
       >
+       
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
          
-          <main className="overflow-y-auto">
+          <main className="overflow-y-auto z-20">
           {children}
           </main>
          

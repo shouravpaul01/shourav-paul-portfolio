@@ -3,7 +3,7 @@ import { TProjectData } from "@/src/types";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Link } from "@nextui-org/link";
-import { AddIcon } from "../icons";
+import { AddIcon, GridViewIcon } from "../icons";
 import {
   Modal,
   ModalBody,
@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: { project: TProjectData }) {
             </div>
 
             <div className="mt-2">
-              <p className="font-chakra font-bold underline text-xl">Links</p>
+              <p className="font-chakra font-bold underline text-lg">Links</p>
               <div className="flex items-center gap-2">
                 <p className="font-chakra font-semibold text-lg text-slate-500 me-2">
                   Live Links:
@@ -96,12 +96,13 @@ export default function ProjectCard({ project }: { project: TProjectData }) {
           </div>
           <div className="hidden md:block">
             <Button
-              showAnchorIcon
+             
               href={project.liveClientLink}
               as={Link}
               isExternal
               color="secondary"
-              variant="ghost"
+              variant="flat"
+              endContent={<GridViewIcon className="size-5 fill-slate-600"/>}
             >
               Vist Site
             </Button>
