@@ -25,11 +25,11 @@ export const Navbar = () => {
   return (
     <NextUINavbar
       maxWidth="xl"
-      position="sticky"
+    position="sticky"
       isBlurred
       classNames={{
         base: ` !backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none md:pt-3`,
-        wrapper: ` bg-background rounded-md shadow-small dark:border border-slate-700`,
+        wrapper: ` bg-background rounded-md shadow-small dark:border border-slate-700 `,
         menu: "!backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none px-3",
       
       }}
@@ -43,13 +43,13 @@ export const Navbar = () => {
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden lg:flex gap-4" justify="center">
         <NavbarItem>
           <MenuTab />
         </NavbarItem>
       </NavbarContent>
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="hidden lg:flex basis-1/5 sm:basis-full"
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
@@ -70,8 +70,20 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
         <ThemeSwitch />
+       
+          <Button
+            href="/contact"
+            as={Link}
+            color="secondary"
+            endContent={<HandShakeIcon />}
+            variant="flat"
+            className="font-semibold"
+          >
+            Let's Talk
+          </Button>
+        
         <NavbarMenuToggle />
       </NavbarContent>
 

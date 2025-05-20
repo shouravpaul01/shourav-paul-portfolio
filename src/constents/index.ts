@@ -121,4 +121,62 @@ export const projectData = [
       },
     ],
   },
+  {
+    id: 3,
+    image: "/project-images/Campers-Shop.png",
+    title: "Campers-Shop",
+    frontendTechnology: "Taiwind CSS | Typescript | React JS | Redux",
+    backendTechnology: "Express JS | MongoDB | Mongoose",
+    liveClientLink: "https://campers-shop-teal.vercel.app/",
+
+    liveLinks: [
+      {
+        linkSource: "View Live Site",
+        link: "https://campers-shop-teal.vercel.app/",
+      },
+      {
+        linkSource: "Api",
+        link: "https://campers-shop-api.vercel.app/",
+      },
+    ],
+    githubLinks: [
+      {
+        linkSource: "Client",
+        link: "https://github.com/shouravpaul01/campers-shop-redux",
+      },
+      {
+        linkSource: "Api",
+        link: "https://github.com/shouravpaul01/campers-shop-api",
+      },
+    ],
+  },
+  {
+    id: 4,
+    image: "/project-images/Ticket-BD-Cinema-house.png",
+    title: "BD-Cinema House",
+    frontendTechnology: "Taiwind CSS | Typescript |React JS | Redux",
+    backendTechnology: "Express JS | MongoDB | Mongoose",
+    liveClientLink: "https://bd-cinema-house.web.app/",
+
+    liveLinks: [
+      {
+        linkSource: "View Live Site",
+        link: "https://bd-cinema-house.web.app/",
+      },
+      {
+        linkSource: "Api",
+        link: "https://bd-cinema-house-api.vercel.app/",
+      },
+    ],
+    githubLinks: [
+      {
+        linkSource: "Client",
+        link: "https://github.com/shouravpaul01/bd-cinema-house-reactjs",
+      },
+      {
+        linkSource: "Api",
+        link: "https://github.com/shouravpaul01/bd-cinema-house-api",
+      },
+    ],
+  },
 ];

@@ -9,18 +9,18 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   
 
   return (
-    <div className="container mx-auto max-w-7xl px-3 md:px-0 h-screen relative ">
+    <div className=" mx-auto max-w-7xl px-3 md:px-4   h-screen relative">
       <Navbar />
       
-      <main className=" relative flex flex-col md:flex-row gap-6 mt-6 ">
+      <main className=" relative flex flex-col lg:flex-row gap-6 mt-6">
        
         {/* Left Sidebar */}
-        <div className="w-full md:w-[30%] md:h-screen md:sticky md:top-[90px]">
+        <div className="w-full lg:w-[350px] lg:h-screen lg:sticky md:top-[100px]">
           <LeftSideContent />
         </div>
 
         {/* Main Content Area */}
-        <div className="w-full md:w-[70%] flex-grow">{children}</div>
+        <div className="w-full  flex-grow">{children}</div>
       </main>
       <Footer />
     </div>

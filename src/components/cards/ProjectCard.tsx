@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: { project: TProjectData }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <>
-      <Card className="py-4 px-5" shadow="none" classNames={{base:"border dark:border-secondary"}}>
+      <Card className="py-4 px-2 md:px-5" shadow="none" classNames={{base:"border dark:border-secondary"}}>
         <CardBody className=" py-2">
           <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden group">
             <img

@@ -44,9 +44,9 @@ export default function RootLayout({
        
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
          
-          <main className="overflow-y-auto z-20">
+          
           {children}
-          </main>
+          
          
         </Providers>
       </body>
