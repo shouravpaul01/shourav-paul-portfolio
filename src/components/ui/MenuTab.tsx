@@ -1,4 +1,4 @@
-import { Tab, Tabs, TabsProps } from "@nextui-org/tabs";
+import { Tab, Tabs, TabsProps } from "@heroui/tabs";
 import Link from "next/link";
 import {
   BlogIcon,

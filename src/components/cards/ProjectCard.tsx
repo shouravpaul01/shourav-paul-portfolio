@@ -1,15 +1,15 @@
 "use client";
 import { TProjectData } from "@/src/types";
-import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { Link } from "@nextui-org/link";
+import { Button } from "@heroui/button";
+import { Card, CardBody, CardFooter } from "@heroui/card";
+import { Link } from "@heroui/link";
 import { AddIcon, GridViewIcon } from "../icons";
 import {
   Modal,
   ModalBody,
   ModalContent,
   useDisclosure,
-} from "@nextui-org/modal";
+} from "@heroui/modal";
 
 export default function ProjectCard({ project }: { project: TProjectData }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();

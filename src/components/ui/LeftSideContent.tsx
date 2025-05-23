@@ -1,4 +1,5 @@
-import { Button } from "@nextui-org/button";
+"use client"
+import { Button } from "@heroui/button";
 import Image from "next/image";
 import {
   CallIcon,
@@ -11,14 +12,17 @@ import {
   MessageIcon,
   WhatsUpIcon,
 } from "../icons";
-import { Snippet } from "@nextui-org/snippet";
-import { Link } from "@nextui-org/link";
-import { Tooltip } from "@nextui-org/tooltip";
-import { Chip } from "@nextui-org/chip";
+import { Snippet } from "@heroui/snippet";
+import { Link } from "@heroui/link";
+import { Tooltip } from "@heroui/tooltip";
+import { Chip } from "@heroui/chip";
+import { motion } from "framer-motion";
 
 export default function LeftSideContent() {
   return (
-    <div className="bg-background p-5 rounded-md shadow-small dark:border border-slate-700 ">
+    <motion.div  initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.1 }} className="bg-background p-5 rounded-md shadow-small dark:border border-slate-700 ">
       <div className="flex  flex-col md:flex-row lg:flex-col gap-0 md:gap-8 lg:gap-0">
         <div className="w-full md:w-[40%] lg:w-full">
           <div className="flex gap-5 justify-start sm:justify-center">
@@ -150,7 +154,7 @@ export default function LeftSideContent() {
           </div>
           <div className="flex justify-center md:justify-normal lg:justify-center pt-5">
             <Button
-              href="/my-resume.pdf"
+              href="/Shourav_paul_resume.pdf"
               as={Link}
               isExternal
               color="secondary"
@@ -167,6 +171,6 @@ export default function LeftSideContent() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

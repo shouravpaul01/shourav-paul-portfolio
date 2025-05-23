@@ -1,14 +1,14 @@
+"use client"
 import ProjectCard from "@/src/components/cards/ProjectCard";
 import HeadingLine from "@/src/components/ui/HeadingLine";
 import { projectData } from "@/src/constents";
-import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { Link } from "@nextui-org/link";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Portfoliopage() {
   return (
-    <div className="bg-background p-5 md:p-10 rounded-md">
+    <motion.div  initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.1 }} className="bg-background p-5 md:p-10 rounded-md">
       <div className="flex items-center gap-3 mb-3">
         <h3 className="text-2xl font-bold font-chakra">
           Explore My Recent Projects
@@ -23,6 +23,6 @@ export default function Portfoliopage() {
         projectData.map((item,index)=> <ProjectCard key={index} project={item} />)
       }
       </div>
-    </div>
+    </motion.div >
   );
 }

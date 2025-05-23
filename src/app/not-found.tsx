@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowForwardIcon, ErrorIcon } from "../components/icons";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 
 export default function NotFoundPage() {
   return (

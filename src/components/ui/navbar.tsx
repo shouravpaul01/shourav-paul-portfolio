@@ -6,32 +6,27 @@ import {
   NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
- 
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
+} from "@heroui/navbar";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
 import NextLink from "next/link";
 import { ThemeSwitch } from "@/src/components/theme-switch";
-import {
-  HandShakeIcon,
-} from "@/src/components/icons";
-import {  useState } from "react";
+import { HandShakeIcon } from "@/src/components/icons";
+import { useState } from "react";
 import MenuTab from "./MenuTab";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
   return (
     <NextUINavbar
       maxWidth="xl"
-    position="sticky"
+      
       isBlurred
       classNames={{
-        base: ` !backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none md:pt-3`,
+        base: ` !backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none`,
         wrapper: ` bg-background rounded-md shadow-small dark:border border-slate-700 `,
         menu: "!backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none px-3",
-      
       }}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -72,25 +67,31 @@ export const Navbar = () => {
 
       <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
         <ThemeSwitch />
-       
-          <Button
-            href="/contact"
-            as={Link}
-            color="secondary"
-            endContent={<HandShakeIcon />}
-            variant="flat"
-            className="font-semibold"
-          >
-            Let's Talk
-          </Button>
-        
+
+        <Button
+          href="/contact"
+          as={Link}
+          color="secondary"
+          endContent={<HandShakeIcon />}
+          variant="flat"
+          className="font-semibold"
+        >
+          Let's Talk
+        </Button>
+
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarMenu >
+      <NavbarMenu>
         <div className="bg-background shadow-small dark:border border-slate-700 h-screen p-3 rounded-md">
-          <MenuTab tabsProps={{isVertical:true, classNames:{base:"flex-1 flex-col",tab:"justify-start"}}} setIsMenuOpen={setIsMenuOpen}/>
-          </div>
+          <MenuTab
+            tabsProps={{
+              isVertical: true,
+              classNames: { base: "flex-1 flex-col", tab: "justify-start" },
+            }}
+            setIsMenuOpen={setIsMenuOpen}
+          />
+        </div>
       </NavbarMenu>
     </NextUINavbar>
   );

@@ -1,14 +1,19 @@
+"use client";
 import { CircleAdjustIcon, SchoolIcon } from "@/src/components/icons";
 import EducationLine from "@/src/components/ui/EducationLine";
 import HeadingLine from "@/src/components/ui/HeadingLine";
 import { backendSkills, frontendSkills, softSkills } from "@/src/constents";
-import { Chip } from "@nextui-org/chip";
+import { Chip } from "@heroui/chip";
 import Image from "next/image";
-import { it } from "node:test";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 export default function HomePage() {
   return (
-    <div className="bg-background p-5 md:p-10 rounded-md  ">
+    <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.1 }} className="bg-background p-5 md:p-10 rounded-md  ">
       <section>
         <h1 className="text-3xl font-extrabold font-chakra ">
           Hello ✋, This is <span className="text-secondary ">Shourav Paul</span>{" "}
@@ -47,7 +52,9 @@ export default function HomePage() {
             <p className="text-slate-500 text-md">Year of Experience </p>
           </div>
           <div>
-            <h1 className="font-chakra font-extrabold text-3xl">10+</h1>
+            <h1 className="font-chakra font-extrabold text-3xl">
+            <CountUp start={4} end={15} /> +
+            </h1>
             <p className="text-slate-500 text-md">Project Completed </p>
           </div>
         </div>
@@ -63,7 +70,10 @@ export default function HomePage() {
             <h2 className="text-xl font-chakra  mb-2">Frontend Skills</h2>
             <div className="flex flex-wrap gap-4 mb-4">
               {frontendSkills.map((item, index) => (
-                <div
+                <motion.div
+                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
                   key={index}
                   className="w-[100px] shadow-small  rounded-md flex flex-col justify-around dark:border border-secondary items-center p-1  bg-gradient-to-t from-secondary-100 to-background"
                 >
@@ -75,7 +85,7 @@ export default function HomePage() {
                     className="z-10"
                   />
                   <span className="text-xs font-semibold">{item.skill}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -83,7 +93,10 @@ export default function HomePage() {
             <h2 className="text-xl font-chakra  mb-2">Backend Skills</h2>
             <div className="flex flex-wrap gap-4">
               {backendSkills.map((item, index) => (
-                <div
+                <motion.div
+                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
                   key={index}
                   className="w-[100px] shadow-small  rounded-md flex flex-col justify-around dark:border border-secondary items-center p-1  bg-gradient-to-t from-secondary-100 to-background"
                 >
@@ -95,7 +108,7 @@ export default function HomePage() {
                     className="z-10"
                   />
                   <span className="text-xs font-semibold">{item.skill}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -129,7 +142,7 @@ export default function HomePage() {
               Jahangirnagar University
             </p>
             <p className="font-chakra  text-xl text-slate-500">
-              MSc in <span>Computer Science.</span>
+              MS in <span>Computer Science.</span>
             </p>
           </div>
         </div>
@@ -148,6 +161,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }

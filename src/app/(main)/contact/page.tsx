@@ -1,13 +1,14 @@
 "use client";
 import { CircleIcon, ContactIcon } from "@/src/components/icons";
 import HeadingLine from "@/src/components/ui/HeadingLine";
-import { Button } from "@nextui-org/button";
-import { Input, Textarea } from "@nextui-org/input";
+import { Button } from "@heroui/button";
+import { Input, Textarea } from "@heroui/input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactValidation } from "@/src/validation/contact.validation";
 import { toast } from "sonner";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -39,9 +40,12 @@ export default function ContactPage() {
     }
     setIsSuccess(false);
   };
-  console.log(isSuccess);
+ 
   return (
-    <div className="bg-background p-5 md:p-10 rounded-md">
+    <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.1 }} className="bg-background p-5 md:p-10 rounded-md">
       <section>
         <div className="flex items-center gap-3 mb-3">
           <p className="font-chakra font-bold text-2xl">Get in Touch</p>
@@ -51,7 +55,15 @@ export default function ContactPage() {
           Feel free to get in touch with me. I am always open to discussing new
           projects, creative ideas or opportunities to be part of your visions.
         </p>
-        <div className="bg-gray-50 border dark:border-secondary dark:bg-opacity-10  dark:shadow-inner dark:shadow-secondary p-5 md:p-20 rounded-md ">
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 80,
+            damping: 12,
+            delay: 0.4,
+          }} className="bg-gray-50 border dark:border-secondary dark:bg-opacity-10  dark:shadow-inner dark:shadow-secondary p-5 md:p-20 rounded-md ">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 ">
             <div className="flex flex-col md:flex-row gap-5">
               <Input
@@ -122,8 +134,8 @@ export default function ContactPage() {
               Submit
             </Button>
           </form>
-        </div>
+        </motion.div>
       </section>
-    </div>
+    </motion.div>
   );
 }
