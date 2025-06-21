@@ -8,7 +8,7 @@ export default function Portfoliopage() {
   return (
     <motion.div  initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.1 }} className="bg-background p-5 md:p-10 rounded-md">
+    transition={{ duration: 0.6, delay: 0.1 }} className="bg-background p-0 md:p-10 rounded-md">
       <div className="flex items-center gap-3 mb-3">
         <h3 className="text-2xl font-bold font-chakra">
           Explore My Recent Projects

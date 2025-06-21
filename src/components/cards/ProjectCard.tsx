@@ -54,43 +54,25 @@ export default function ProjectCard({ project }: { project: TProjectData }) {
             </div>
 
             <div className="mt-2">
-              <p className="font-chakra font-bold underline text-lg">Links</p>
+             
               <div className="flex items-center gap-2">
-                <p className="font-chakra font-semibold text-lg text-slate-500 me-2">
-                  Live Links:
-                </p>
-                {project.liveLinks.map((item, index) => (
+                
+                {project.links?.map((item, index) => (
                   <Link
                     key={index}
                     isBlock
                     showAnchorIcon
-                    underline="always"
+                    underline="hover"
                     isExternal
                     href={item.link}
                     color="primary"
+                    className="italic"
                   >
                     {item.linkSource}
                   </Link>
                 ))}
               </div>
-              <div className="flex items-center gap-2">
-                <p className="font-chakra font-semibold text-lg text-slate-500 me-2">
-                  Github Links:
-                </p>
-                {project.githubLinks.map((item, index) => (
-                  <Link
-                    key={index}
-                    isBlock
-                    showAnchorIcon
-                    underline="always"
-                    isExternal
-                    href={item.link}
-                    color="primary"
-                  >
-                    {item.linkSource}
-                  </Link>
-                ))}
-              </div>
+              
             </div>
             <div></div>
           </div>

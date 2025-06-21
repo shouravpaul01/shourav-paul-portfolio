@@ -16,7 +16,7 @@ export type TProjectData ={
   frontendTechnology: string;
   backendTechnology: string;
   liveClientLink: string;
-  liveLinks: TProjectLink[];
-  githubLinks: TProjectLink[];
+  links: TProjectLink[];
+  
 }
 

@@ -21,7 +21,6 @@ export const Navbar = () => {
   return (
     <NextUINavbar
       maxWidth="xl"
-      
       isBlurred
       classNames={{
         base: ` !backdrop-blur-none !backdrop-saturate-100 !bg-transparent data-[menu-open=true]:!backdrop-blur-none`,
@@ -68,17 +67,6 @@ export const Navbar = () => {
       <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
         <ThemeSwitch />
 
-        <Button
-          href="/contact"
-          as={Link}
-          color="secondary"
-          endContent={<HandShakeIcon />}
-          variant="flat"
-          className="font-semibold"
-        >
-          Let's Talk
-        </Button>
-
         <NavbarMenuToggle />
       </NavbarContent>
 
@@ -91,6 +79,16 @@ export const Navbar = () => {
             }}
             setIsMenuOpen={setIsMenuOpen}
           />
+          <Button
+            href="/contact"
+            as={Link}
+            color="secondary"
+            startContent={<HandShakeIcon />}
+            variant="flat"
+            className="w-full font-semibold mt-3"
+          >
+            Let's Talk
+          </Button>
         </div>
       </NavbarMenu>
     </NextUINavbar>

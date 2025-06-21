@@ -71,26 +71,21 @@ export const projectData = [
     backendTechnology: "Express JS | MongoDB | Mongoose",
 
     liveClientLink: "https://tech-trips-tricks-zone.vercel.app/",
-    liveLinks: [
+    links: [
       {
-        linkSource: "View Live Site",
+        linkSource: "Live View",
+        link: "https://tech-trips-tricks-zone.vercel.app/",
+      },
+        {
+        linkSource: "Github Client",
         link: "https://tech-trips-tricks-zone.vercel.app/",
       },
       {
-        linkSource: "Api",
+        linkSource: "Github Api",
         link: "https://github.com/shouravpaul01/tech-trips-tricks-client",
       },
     ],
-    githubLinks: [
-      {
-        linkSource: "Client",
-        link: "https://tech-trips-tricks-zone.vercel.app/",
-      },
-      {
-        linkSource: "Api",
-        link: "https://github.com/shouravpaul01/tech-trips-tricks-client",
-      },
-    ],
+    
   },
   {
     id: 2,
@@ -100,26 +95,21 @@ export const projectData = [
     backendTechnology: "Express JS | MongoDB | Mongoose",
     liveClientLink: "https://dreamstrip.vercel.app/",
 
-    liveLinks: [
+    links: [
       {
-        linkSource: "View Live Site",
+        linkSource: "Live View",
         link: "https://dreamstrip.vercel.app/",
       },
-      {
-        linkSource: "Api",
-        link: "https://vercel.com/paulshouravs-projects/car-rental-reservation-system-api",
-      },
-    ],
-    githubLinks: [
-      {
-        linkSource: "Client",
+       {
+        linkSource: "Github Client",
         link: "https://github.com/shouravpaul01/dreams-trip-car-rental-reservation-system",
       },
       {
-        linkSource: "Api",
+        linkSource: "Github Api",
         link: "https://github.com/shouravpaul01/car-rental-reservation-system-api",
       },
     ],
+    
   },
   {
     id: 3,
@@ -129,26 +119,21 @@ export const projectData = [
     backendTechnology: "Express JS | MongoDB | Mongoose",
     liveClientLink: "https://campers-shop-teal.vercel.app/",
 
-    liveLinks: [
+    links: [
       {
-        linkSource: "View Live Site",
+        linkSource: "Live View",
         link: "https://campers-shop-teal.vercel.app/",
       },
       {
-        linkSource: "Api",
-        link: "https://campers-shop-api.vercel.app/",
-      },
-    ],
-    githubLinks: [
-      {
-        linkSource: "Client",
+        linkSource: "Github Client",
         link: "https://github.com/shouravpaul01/campers-shop-redux",
       },
       {
-        linkSource: "Api",
+        linkSource: "Github Api",
         link: "https://github.com/shouravpaul01/campers-shop-api",
       },
     ],
+    
   },
   {
     id: 4,
@@ -158,25 +143,22 @@ export const projectData = [
     backendTechnology: "Express JS | MongoDB | Mongoose",
     liveClientLink: "https://bd-cinema-house.web.app/",
 
-    liveLinks: [
+    links: [
       {
-        linkSource: "View Live Site",
+        linkSource: "Live View",
         link: "https://bd-cinema-house.web.app/",
       },
       {
-        linkSource: "Api",
-        link: "https://bd-cinema-house-api.vercel.app/",
-      },
-    ],
-    githubLinks: [
-      {
-        linkSource: "Client",
+        linkSource: "Github Client",
         link: "https://github.com/shouravpaul01/bd-cinema-house-reactjs",
       },
       {
-        linkSource: "Api",
+        linkSource: "Github Api",
         link: "https://github.com/shouravpaul01/bd-cinema-house-api",
       },
+    ],
+    githubLinks: [
+     
     ],
   },
 ];

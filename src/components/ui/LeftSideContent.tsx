@@ -154,7 +154,7 @@ export default function LeftSideContent() {
           </div>
           <div className="flex justify-center md:justify-normal lg:justify-center pt-5">
             <Button
-              href="/Shourav_paul_resume.pdf"
+              href="/Resume-Shourav Paul.pdf"
               as={Link}
               isExternal
               color="secondary"
